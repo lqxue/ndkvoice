@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ExecutorService fixedThreadPool;
     private PlayerThread playerThread;
-    private String path = "file:///android_asset/hensen.mp3";
+    private String path = "file:///android_asset/wuhan.mp3";
     private int type;
 
     private LinearLayout normal, luoli, dashu, jingsong, gaoguai, kongling;

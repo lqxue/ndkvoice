@@ -50,7 +50,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
-        applicationId "com.handsome.ndkvoice"
+        applicationId "com.ndkvoice"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1

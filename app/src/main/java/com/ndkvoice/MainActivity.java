@@ -1,4 +1,4 @@
-package com.handsome.ndkvoice;
+package com.ndkvoice;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

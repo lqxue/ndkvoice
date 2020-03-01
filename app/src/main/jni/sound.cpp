@@ -1,7 +1,7 @@
 #include "inc/fmod.hpp"
 #include <stdlib.h>
 #include <unistd.h>
-#include  "com_handsome_ndkvoice_Utils.h"
+#include  "com_ndkvoice_Utils.h"
 
 #include <jni.h>
 
@@ -18,7 +18,7 @@
 
 using namespace FMOD;
 
-JNIEXPORT void JNICALL Java_com_handsome_ndkvoice_Utils_fix(JNIEnv *env,
+JNIEXPORT void JNICALL Java_com_ndkvoice_Utils_fix(JNIEnv *env,
 		jclass jcls, jstring path_jstr, jint type) {
 
     //声音引擎
@@ -30,7 +30,7 @@ JNIEXPORT void JNICALL Java_com_handsome_ndkvoice_Utils_fix(JNIEnv *env,
     //正在播放
 	bool playing = true;
 	//音乐轨道
-    Channel *channel;
+    Channel *channel = NULL;
 	//播放速度
     float frequency = 0;
     //音频地址
@@ -38,14 +38,23 @@ JNIEXPORT void JNICALL Java_com_handsome_ndkvoice_Utils_fix(JNIEnv *env,
 
     System_Create(&system);
 	system->init(32, FMOD_INIT_NORMAL, NULL);
-    LOGE("%s", "发生异常1111111111");
+    LOGE("%s", "发生异常11111111112222");
 	try {
 		//创建声音
 		system->createSound(path_cstr, FMOD_DEFAULT, NULL, &sound);
+
 		switch (type) {
             case MODE_NORMAL:
+                LOGE("%s", "发生异常222222");
                 //原生播放
-                system->playSound(sound, 0, false, &channel);
+                try {
+                    system->playSound(sound, 0, false, &channel);
+                }catch (...){
+                    LOGE("%s", "发生异常");
+                }
+
+
+                LOGE("%s", "发生异常33333");
                 break;
             case MODE_LUOLI:
                 //提升或者降低音调的一种音效

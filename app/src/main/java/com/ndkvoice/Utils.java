@@ -1,4 +1,4 @@
-package com.handsome.ndkvoice;
+package com.ndkvoice;
 
 public class Utils {
 
